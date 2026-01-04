@@ -1,0 +1,31 @@
+#!/bin/sh
+
+
+echo "Applying GNOME Keyboard Input Source Options..."
+
+
+gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'br'), ('xkb', 'dk')]"
+
+
+echo "Disabling GNOME Screen Locking..."
+
+
+gsettings set org.gnome.desktop.screensaver lock-enabled false
+gsettings set org.gnome.desktop.session idle-delay 0
+
+
+echo "Applying GNOME Date & Time Options..."
+
+
+gsettings set org.gnome.desktop.interface clock-format '24h'
+gsettings set org.gnome.desktop.interface clock-show-weekday true
+gsettings set org.gnome.desktop.interface clock-show-seconds true
+gsettings set org.gnome.desktop.calendar show-weekdate true
+
+
+echo "Disabling GNOME Idle Suspension..."
+
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+
+
+
